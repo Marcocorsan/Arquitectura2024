@@ -7,16 +7,22 @@ using System.Threading.Tasks;
 
 namespace Aplicacion.Services
 {
-    public  class EFMarcaciones : IMarcacionesRepository
+    public class EFMarcaciones : IMarcacionesRepository
     {
         private MarcacionesContext context;
 
-            public EFMarcaciones(MarcacionesContext ctx)
+        public EFMarcaciones(MarcacionesContext ctx)
         {
             context = ctx;
         }
         public IEnumerable<Marcaciones> Marcaciones => context.Marcaciones;
-       
+
+        public Marcaciones GetMarcacion(int id)
+        {
+            return context.Marcaciones.Find(id);
+        }
+
+
 
     }
 }

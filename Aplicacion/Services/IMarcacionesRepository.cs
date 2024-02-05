@@ -10,5 +10,6 @@ namespace Aplicacion.Services
     public interface IMarcacionesRepository
     {
         IEnumerable<Marcaciones> Marcaciones { get; }
+        Marcaciones GetMarcacion(int idMarcaciones);
     }
 }
