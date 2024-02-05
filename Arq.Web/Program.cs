@@ -9,7 +9,7 @@ builder.Services.AddDbContext<MarcacionesContext>(opts => {
     opts.UseSqlServer(
     builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });
-builder.Services.AddScoped<IMarcacionesRepository, EFMarcaciones>();   
+builder.Services.AddScoped<IMarcacionesRepository, EFMarcacionesRepository>();   
 var app = builder.Build();
 app.UseStaticFiles();
 app.MapDefaultControllerRoute();

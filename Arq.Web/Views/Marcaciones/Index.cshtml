@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Aplicacion.Entities.Marcaciones>
+@{
+    ViewData["Title"] = "Products";
+}
+<div class="m-1 p-2">
+</div>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr><th>Credencial</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.credencial</td>
+                <td>@p.fechaMarcacion.ToString("dd/MM/yy")</td>
+                <td>@p.horaMarcacion</td>
+                <td>$@p.estado</td>
+            </tr>
+        }
+    </tbody>
+</table>
